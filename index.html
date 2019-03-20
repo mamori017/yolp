@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <meta content="yolp" name="Keywords" />
+  <meta content="yolp" name="Description" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  <title id="title">yolp</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet"/>
+  <link href="./css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container-fluid">
+    <!-- map -->
+    <div id="map" style="height:360px;"></div>
+
+    <!-- list -->
+    <div class="row" id="list" style="margin-top:1rem;">
+        <div class="col-md-4 col-sm-6 col-xs-12" v-for="item in items.list" style="margin-bottom:0.5em;">
+            <div class="card" v-on:click="cardClick(item.lat,item.lon)">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <div>{{item.name}}</div>
+                    </h5>
+                    <p class="card-text">{{item.address}}</p>
+                </div>
+            </div>
+        </div>
+    </div>      
+</div>
+
+<script type="text/javascript" charset="utf-8" src="https://map.yahooapis.jp/js/V1/jsapi?appid={YOLP App ID}"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="./js/default.js"></script>
+</body>
+</html>
+
+
